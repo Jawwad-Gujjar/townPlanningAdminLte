@@ -265,11 +265,13 @@ console.log(areaDetail)
   }
   render() {
     return (
-      <div style={{ marginTop: 10 }}>
-        <div className="main">
+      <div style={{ marginTop: 10 ,marginLeft:10 }}>
+        <div className="content-wrapper">
           <form className="form">
-            <div>
-              <div>
+            
+            <div className="row">
+            <div class="col-sm-6">
+              <div className="form-group">
                 <label>Project Name</label>
                 <br />
                 <select id="ddlpro" style={{ width: 300 }} onChange={this.selectedIndex} >
@@ -277,16 +279,19 @@ console.log(areaDetail)
                   {this.ddlproject()}
                 </select>
               </div>
-              <div>
-                <label>Location Category</label>
+              </div>
+              <div class="col-sm-6">
+              <div className="form-group">
+                <label>Location Category</label> 
                 <br />
                 <select id="ddlloc" style={{ width: 300 }} onChange={this.selectedIndexloc}>
                   <option>---Please Select---</option>
                   {this.ddllocation()}
                 </select>
               </div>
-              
-              <div>
+              </div>
+              <div class="col-sm-6">
+              <div className="form-group">
                 <label>Location Type</label>
                 <br />
                 <select id="ddlloctype"  onChange={this.selectedIndexloctype} style={{ width: 300 }}>
@@ -294,7 +299,9 @@ console.log(areaDetail)
                   {this.ddllocationtype()}
                 </select>
               </div>
-              <div>
+              </div>
+              <div class="col-sm-6">
+              <div className="form-group">
                 <label >Area</label>
                 <br />
                 <select id="ddlarea" onChange={this.selectedIndexarea} style={{ width: 300 }} >
@@ -302,8 +309,9 @@ console.log(areaDetail)
                   {this.ddlarea()}
                 </select>
               </div>
-            </div>
-            <div>
+              </div>
+              <div class="col-sm-6">
+            <div className="form-group">
               <label>Serial From</label>
               <input type="text"
                 style={{ width: 300 }}
@@ -311,7 +319,9 @@ console.log(areaDetail)
                 value={this.state.serial_From}
                 onChange={this.onChangeserialFrom} />
             </div>
-            <div>
+            </div>
+            <div class="col-sm-6">
+            <div className="form-group">
               <label> Serial To</label>
               <input type="text"
                 style={{ width: 300 }}
@@ -319,7 +329,8 @@ console.log(areaDetail)
                 value={this.state.serial_To}
                 onChange={this.onChangeserialTo}
               />
-
+            </div>
+            </div>
             </div>
             <div className="form-group">
               <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit} />

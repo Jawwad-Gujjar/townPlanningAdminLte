@@ -8,7 +8,7 @@ import Loctypedropdown from './loctypedropdown'
 import Areadropdown from './areadropdown'
 import TableRow from './allotmenttable'
 import Plandropdown from './plandropdown'
-
+const apihit = require('../../routecontroller')
 
 
 export default class Create extends Component {
@@ -237,14 +237,14 @@ export default class Create extends Component {
     })
   }
   componentDidMount() {
-    axios.get('http://localhost:4010/projectdetail')
+    axios.get(apihit.APIHIT +'/projectdetail')
       .then(response => {
         this.setState({ pdetail: response.data });
 
       })
       .catch(function (error) {
       })
-    axios.get('http://localhost:4010/business')
+    axios.get(apihit.APIHIT +'/business')
       .then(response => {
         this.setState({ business: response.data });
 
@@ -252,7 +252,7 @@ export default class Create extends Component {
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/policy')
+    axios.get(apihit.APIHIT +'/policy')
       .then(response => {
         this.setState({ plan: response.data });
 
@@ -261,42 +261,42 @@ export default class Create extends Component {
         console.log(error);
       })
 
-    axios.get('http://localhost:4010/customer')
+    axios.get(apihit.APIHIT +'/customer')
       .then(response => {
         this.setState({ customer: response.data });
       })
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/broker')
+    axios.get(apihit.APIHIT +'/broker')
       .then(response => {
         this.setState({ broker: response.data });
       })
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/project')
+    axios.get(apihit.APIHIT +'/project')
       .then(response => {
         this.setState({ project: response.data });
       })
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/business')
+    axios.get(apihit.APIHIT +'/business')
       .then(response => {
         this.setState({ location: response.data });
       })
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/contacts')
+    axios.get(apihit.APIHIT +'/contacts')
       .then(response => {
         this.setState({ locationtype: response.data });
       })
       .catch(function (error) {
         console.log(error);
       })
-    axios.get('http://localhost:4010/area')
+    axios.get(apihit.APIHIT +'/area')
       .then(response => {
         this.setState({ area: response.data });
       })
@@ -422,11 +422,12 @@ export default class Create extends Component {
   render() {
 
     return (
-      <div style={{ marginTop: 10 }}>
-        <div className="main">
+      <div style={{ marginTop: 10 ,marginLeft:10 }}>
+        <div className="content-wrapper">
           <form>
-
-            <div className="form-group">
+          <div class="row">
+                    <div class="col-sm-6">
+            <div className="form-group " >
               <label>Allotment Number:  </label>
               <input
                 style={{ width: 300 }}
@@ -436,6 +437,8 @@ export default class Create extends Component {
                 onChange={this.onChangeallotmentNo}
               />
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Allotment Date: </label>
               <input type="date"
@@ -445,15 +448,20 @@ export default class Create extends Component {
                 onChange={this.onChangeallotmentDate}
               />
             </div>
-            <form style={{ backgroundColor: 'lightgrey', width: 400 }}>
-              <div >
+            </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm-6">
+              <div className="form-group" >
                 <label>Customer Name</label>
                 <br />
-                <select style={{ width: 300 }} id="ddlcustomer" onChange={this.selectedIndexCus}>
+                <select style={{ width:300  }} id="ddlcustomer" onChange={this.selectedIndexCus}>
                   <option>---Please Select---</option>
                   {this.ddlcustomer()}
                 </select>
               </div>
+              </div>
+              <div class="col-sm-6">
               <div className="form-group">
                 <label>Customer Address: </label>
                 <input type="text"
@@ -463,6 +471,8 @@ export default class Create extends Component {
                   onChange={this.onChangecustomerAddress}
                 />
               </div>
+              </div>
+              <div class="col-sm-6">
               <div className="form-group">
                 <label>Customer contact No: </label>
                 <input type="text"
@@ -472,9 +482,9 @@ export default class Create extends Component {
                   onChange={this.onChangecontactNo}
                 />
               </div>
-              <br />
-            </form>
-            <div >
+              </div>
+              <div class="col-sm-6">
+              <div className="form-group">
               <label>Broker Name</label>
               <br />
               <select style={{ width: 300 }} id="ddlbroker" onChange={this.selectedIndexbro}>
@@ -482,6 +492,8 @@ export default class Create extends Component {
                 {this.ddlbroker()}
               </select>
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Cammission (%): </label>
               <input type="text"
@@ -491,6 +503,8 @@ export default class Create extends Component {
                 onChange={this.onChangecammission}
               />
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Remarks: </label>
               <input type="text"
@@ -500,8 +514,10 @@ export default class Create extends Component {
                 onChange={this.onChangeremarks}
               />
             </div>
-
-            <div>
+           </div>
+           
+           <div class="col-sm-6">
+           <div className="form-group">
               <label>Project Name</label>
               <br />
               <select id="ddlpro" style={{ width: 300 }} onChange={this.onCompleteSelect}>
@@ -509,16 +525,19 @@ export default class Create extends Component {
                 {this.ddlproject()}
               </select>
             </div>
-
-            <div >
+             </div>
+             <div class="col-sm-6">
+            <div className="form-group">
               <label>Location Category</label>
               <br />
-              <select id="ddlloc" style={{ width: 300 }} onChange={this.onCompleteSelect}>
+              <select id="ddlloc" style={{ width: 300  }} onChange={this.onCompleteSelect}>
                 <option>---Please Select---</option>
                 {this.ddllocation()}
               </select>
             </div>
-            <div >
+            </div>
+            <div class="col-sm-6">
+            <div className="form-group" >
               <label>Location Type</label>
               <br />
               <select style={{ width: 300 }} id="ddlloctype" onChange={this.onCompleteSelect}>
@@ -526,7 +545,9 @@ export default class Create extends Component {
                 {this.ddlloctype()}
               </select>
             </div>
-            <div >
+            </div>
+            <div class="col-sm-6">
+            <div className="form-group">
               <label>Area</label>
               <br />
               <select style={{ width: 300 }} id="ddlarea" onChange={this.onCompleteSelect}>
@@ -534,7 +555,9 @@ export default class Create extends Component {
                 {this.ddlarea()}
               </select>
             </div>
-            <div >
+            </div>
+            <div class="col-sm-6">
+            <div className="form-group" >
               <label>Installment Plan</label>
               <br />
               <select style={{ width: 300 }} id="ddlplan" onChange={this.selectedIndexplan}>
@@ -542,6 +565,8 @@ export default class Create extends Component {
                 {this.ddlplan()}
               </select>
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Rate: </label>
               <input type="text"
@@ -551,6 +576,8 @@ export default class Create extends Component {
                 onChange={this.onChangerate}
               />
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Total Cost: </label>
               <input type="text"
@@ -560,6 +587,8 @@ export default class Create extends Component {
                 onChange={this.onChangetotalCost}
               />
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Booking Amount : </label>
               <input type="text"
@@ -569,6 +598,8 @@ export default class Create extends Component {
                 onChange={this.bookingAmount}
               />
             </div>
+            </div>
+            <div class="col-sm-6">
             <div className="form-group">
               <label>Remind  Amount : </label>
               <input type="text"
@@ -578,7 +609,13 @@ export default class Create extends Component {
                 onChange={this.onChangeremindAmount}
               />
             </div>
+            </div>
+             </div> 
+            
+            
+              
             <br />
+            
           </form>
           <table className="table table-striped" style={{ marginTop: 20 }}>
             <thead>

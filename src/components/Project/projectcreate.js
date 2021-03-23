@@ -88,10 +88,12 @@ export default class Create extends Component {
   } 
   render() {
     return (
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 10,marginLeft:10 }}>
           <h1 style={{textAlign:'center'}} >Create Project</h1>
-          <div className="main">
+          <div className="content-wrapper">
             <form onSubmit={this.onSubmit}>
+              <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                    <label>Project Name:  </label>
                     <input 
@@ -101,7 +103,9 @@ export default class Create extends Component {
                       value={this.state.project_Name}
                       onChange={this.onChangeprojectname}
                       />
+                      </div>
                 </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                    <label>Project Type:  </label>
                     <input 
@@ -112,6 +116,8 @@ export default class Create extends Component {
                       onChange={this.onChangeprojecttype}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                    <label>Assigned To:  </label>
                     <input 
@@ -122,7 +128,8 @@ export default class Create extends Component {
                       onChange={this.onChangeassignto}
                       />
                 </div>
-                
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                    <label>Start Date :  </label>
                     <input 
@@ -133,6 +140,8 @@ export default class Create extends Component {
                       onChange={this.onChangestartdate}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                    <label>End Date :  </label>
                     <input 
@@ -142,6 +151,8 @@ export default class Create extends Component {
                       value={this.end_Date}
                       onChange={this.onChangeenddate}
                       />
+                </div>
+                </div>
                 </div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>

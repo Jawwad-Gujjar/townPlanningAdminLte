@@ -126,9 +126,11 @@ export default class Create extends Component {
   render() {
     //componentDidMount()
     return (
-        <div  style={{ marginTop: 10 }}>
-            <div className='main'>
-            <form>
+        <div  style={{ marginTop: 10,marginLeft:10 }}>
+            <div className='content-wrapper'>
+            <form>                        
+              <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Plan Title:  </label>
                     <input 
@@ -139,6 +141,8 @@ export default class Create extends Component {
                       onChange={this.onChangeplanTitle}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Booking (%): </label>
                     <input type="text" 
@@ -148,6 +152,8 @@ export default class Create extends Component {
                        onChange={this.onChangebooking}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Installment (%): </label>
                     <input type="text" 
@@ -157,6 +163,8 @@ export default class Create extends Component {
                        onChange={this.onChangeinstallmentP}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label> No . Of Installment: </label>
                     <input type="text" 
@@ -166,6 +174,8 @@ export default class Create extends Component {
                        onChange={this.onChangenoInstallment}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div>
                     <label>Installment Period</label>
                     <br/>
@@ -174,7 +184,9 @@ export default class Create extends Component {
                     {this.ddlinstallment()}
                     </select>
                     </div>
+                    </div>
 <br/>
+</div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>
                 </div>

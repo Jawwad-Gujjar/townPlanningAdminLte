@@ -69,10 +69,11 @@ export default class Create extends Component {
  
   render() { 
     return (
-        <div style={{ marginTop: 10 }}>
-            <div className="main">
+        <div style={{ marginTop: 10,marginLeft:10 }}>
+            <div className="content-wrapper">
             <form onSubmit={this.onSubmit}>
-
+              <div className="row">
+            <div class="col-sm-6">
                 <div className="form-group">
                     <label>Installment Id:  </label>
                     <input 
@@ -83,6 +84,8 @@ export default class Create extends Component {
                       onChange={this.onChangeinstallmentid}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Installment Name:  </label>
                     <input 
@@ -93,6 +96,8 @@ export default class Create extends Component {
                       onChange={this.onChangeinstallmentname}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Installment Reoccur After:  </label>
                     <input 
@@ -102,6 +107,8 @@ export default class Create extends Component {
                       value={this.state.installmentAfter}
                       onChange={this.onChangeinstallmentntAfter}
                       />
+                </div>
+                </div>
                 </div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>

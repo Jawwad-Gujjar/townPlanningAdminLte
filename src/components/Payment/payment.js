@@ -67,10 +67,11 @@ export default class Create extends Component {
   render() {
     //componentDidMount()
     return (
-        <div style={{ marginTop: 10 }}>
-           <div className="main">
+        <div style={{ marginTop: 10,marginLeft:10 }}>
+           <div className="content-wrapper">
             <form>
-              
+              <div className="row">
+            <div class="col-sm-6">
                 <div className="form-group">
                     <label>Payment Id:  </label>
                     <input 
@@ -81,6 +82,8 @@ export default class Create extends Component {
                       onChange={this.onChangepaymentId}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Payment Mode: </label>
                     <input type="text" 
@@ -89,6 +92,8 @@ export default class Create extends Component {
                       value={this.state.payment_Name}
                        onChange={this.onChangepaymentName}
                       />
+                </div>
+                </div>
                 </div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>

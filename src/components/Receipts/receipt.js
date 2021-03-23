@@ -188,9 +188,11 @@ onChangeamount (e){
     }
     render() {
         return (
-            <div style={{ marginTop: 10 }}>
-               <div className="main">
+            <div style={{ marginTop: 10,marginLeft:10 }}>
+               <div className="content-wrapper">
                 <form >
+                <div className="row">
+              <div class="col-sm-6">
                     <div>
                     <label>Received From</label>
                     <br/>
@@ -198,7 +200,11 @@ onChangeamount (e){
                       <option selected>---Please Select---</option>
                       {this.ddlreceived()}
                 </select>
-                <div>
+                    </div>
+                    </div>
+                    
+              <div class="col-sm-6">
+                    <div>
                     <label>Number Of Allotment</label>
                     <br/>
                     <select id="ddlallot" style={{width:300}} onChange={this.selectedIndexAllotment}>
@@ -207,6 +213,7 @@ onChangeamount (e){
                 </select>
                     </div>
                     </div>
+                    <div class="col-sm-6">
                     <div>
                     <label>Payment Mode</label>
                     <br/>
@@ -215,8 +222,8 @@ onChangeamount (e){
                       {this.ddlpayment()}
                 </select>
                     </div>
-       
-                         <br/>
+                    </div>
+                    <div class="col-sm-6">                        
                     <div className="form-group">
                         <label> Cheque / Slip # :  </label>
                         <input 
@@ -226,6 +233,8 @@ onChangeamount (e){
                           value={this.state.slip}
                           onChange={this.onChangeslip}/>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div className="form-group">
                         <label>Remarks: </label>
                         <input 
@@ -235,6 +244,8 @@ onChangeamount (e){
                           value={this.state.remarks}
                           onChange={this.onChangeremarks}/>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div className="form-group">
                         <label>Voucher Number: </label>
                         <input 
@@ -244,6 +255,8 @@ onChangeamount (e){
                           value={this.state.vaucher}
                           onChange={this.onChangevaucher}/>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div className="form-group">
                         <label>Date: </label>
                         <input 
@@ -253,6 +266,8 @@ onChangeamount (e){
                           value={this.state.date}
                           onChange={this.onChangedate}/>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div className="form-group">
                         <label>Customer Balance: </label>
                         <input 
@@ -262,6 +277,8 @@ onChangeamount (e){
                           value={this.state.balance}
                           onChange={this.onChangebalance}/>
                     </div>
+                    </div>
+                    <div class="col-sm-6">
                     <div className="form-group">
                         <label>Amount Paid: </label>
                         <input 
@@ -270,6 +287,8 @@ onChangeamount (e){
                           className="form-control"
                           value={this.state.amount}
                           onChange={this.onChangeamount}/>
+                    </div>
+                    </div>
                     </div>
                     <div className="form-group">
                         <input type="submit" value="Save" className="btn btn-primary" onClick={this.onSubmit}/>

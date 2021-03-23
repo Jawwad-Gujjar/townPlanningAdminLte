@@ -152,10 +152,11 @@ export default class Create extends Component {
   }
  render() {
        return (
-        <div style={{ marginTop: 10 }}>
-            <div className="main">
+        <div style={{ marginTop: 10,marginLeft : 10 }}>
+            <div className="content-wrapper">
             <form >
-              
+              <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Customer Id:  </label>
                     <input style={{width:300}}
@@ -165,6 +166,8 @@ export default class Create extends Component {
                       onChange={this.onChangecustomerId}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Membership Date: </label>
                     <input style={{width:300}} 
@@ -174,6 +177,8 @@ export default class Create extends Component {
                        onChange={this.onChangemembershipDate}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Customer Name: </label>
                     <input  
@@ -184,6 +189,8 @@ export default class Create extends Component {
                        onChange={this.onChangecustomerName}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>C.N.I.C #: </label>
                     <input  style={{width: 300}}
@@ -193,8 +200,8 @@ export default class Create extends Component {
                        onChange={this.onChangeCnic}
                       />
                 </div>
-                
-                <form style={{backgroundColor:'lightgrey', width:400}}>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Present Address: </label>
                     <input  style={{width: 300}}
@@ -204,6 +211,8 @@ export default class Create extends Component {
                        onChange={this.onChangeprasentAddress}
                       />
              </div>
+             </div>
+             <div class="col-sm-6">
              <div className="form-group">
                     <label>City: </label>
                     <input  style={{width: 300}}
@@ -213,7 +222,8 @@ export default class Create extends Component {
                        onChange={this.onChangeCity}
                       />
              </div>
-             
+             </div>
+             <div class="col-sm-6">
              <div className="form-group">
                     <label>Country: </label>
                     <input  style={{width: 300}}
@@ -223,10 +233,8 @@ export default class Create extends Component {
                        onChange={this.onChangeCountry}
                       />
              </div>
-             <br/>
-                </form >
-                <br/>
-                <form style={{backgroundColor:'lightgrey', width:400}}>
+             </div>              
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Permanent Address: </label>
                     <input  style={{width: 300}}
@@ -236,6 +244,8 @@ export default class Create extends Component {
                        onChange={this.onChangeparmanentAddress}
                       />
              </div>
+             </div>
+             <div class="col-sm-6">
              <div className="form-group">
                     <label>City: </label>
                     <input  style={{width: 300}}
@@ -245,7 +255,8 @@ export default class Create extends Component {
                        onChange={this.onChangepCity}
                       />
              </div>
-             
+             </div>
+             <div class="col-sm-6">             
              <div className="form-group">
                     <label>Country: </label>
                     <input  style={{width: 300}}
@@ -255,9 +266,8 @@ export default class Create extends Component {
                        onChange={this.onChangepCountry}
                       />
              </div>
-             <br/>
-                </form>
-                <br/>
+            </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Telephone Number (s): </label>
                     <input  style={{width: 300}}
@@ -267,6 +277,8 @@ export default class Create extends Component {
                        onChange={this.onChangeteleNo}
                       />
              </div>
+             </div>
+             <div class="col-sm-6">
              <div className="form-group">
                     <label>Cell Number : </label>
                     <input  style={{width: 300}}
@@ -276,7 +288,8 @@ export default class Create extends Component {
                        onChange={this.onChangecellNo}
                       />
              </div>
-            
+             </div>
+             </div>
 
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>

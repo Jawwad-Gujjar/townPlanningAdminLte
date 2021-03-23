@@ -32,6 +32,7 @@ export default class Create extends Component {
       area_Id: this.state.area_Id,
       area_Name: this.state.area_Name,
     };
+    console.log(obj)
     axios.post(apihit.APIHIT +'/area/addarea', obj)
         .then(res => console.log(res.data));
     
@@ -64,6 +65,8 @@ export default class Create extends Component {
         <div style={{ marginTop: 10,marginLeft:10 }}>
            <div className="content-wrapper">
             <form >
+              <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Area Id:  </label>
                     <input 
@@ -74,6 +77,8 @@ export default class Create extends Component {
                       onChange={this.onChangeareaId}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Area Size: </label>
                     <input 
@@ -84,10 +89,12 @@ export default class Create extends Component {
                       onChange={this.onChangeareaName}
                       />
                 </div>
+                </div>
+                </div>
                 <div className="form-group">
                     <input type="submit" value="Save" className="btn btn-primary" onClick={this.onSubmit}/>
                 </div>
-
+                
             </form>
             <h3 align="center">Area List</h3>
           <table className="table table-striped" style={{ marginTop: 20 }}>

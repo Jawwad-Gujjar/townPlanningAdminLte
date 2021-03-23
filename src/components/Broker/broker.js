@@ -138,11 +138,12 @@ export default class Create extends Component {
   render() {
     //componentDidMount()
     return (
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 10,marginLeft:10 }}>
           
-          <div className="main">
+          <div className="content-wrapper">
               <form>
-              
+              <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Broker Id:  </label>
                     <input 
@@ -153,6 +154,8 @@ export default class Create extends Component {
                       onChange={this.onChangebrokerId}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Activation Date: </label>
                     <input type="date" style={{width: 300}}
@@ -161,6 +164,8 @@ export default class Create extends Component {
                        onChange={this.onChangeactivationDate}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Broker Name: </label>
                     <input type="text" 
@@ -170,6 +175,8 @@ export default class Create extends Component {
                        onChange={this.onChangebrokerName}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>C.N.I.C: </label>
                     <input type="text" 
@@ -179,6 +186,8 @@ export default class Create extends Component {
                        onChange={this.onChangecnIc}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Address: </label>
                     <input type="text" 
@@ -188,6 +197,8 @@ export default class Create extends Component {
                        onChange={this.onChangeaddress}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>City: </label>
                     <input type="text" 
@@ -197,6 +208,8 @@ export default class Create extends Component {
                        onChange={this.onChangecity}
                       />
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Country: </label>
                     <input type="text" 
@@ -206,6 +219,8 @@ export default class Create extends Component {
                        onChange={this.onChangecountry}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Telephone No: </label>
                     <input type="text" 
@@ -215,6 +230,8 @@ export default class Create extends Component {
                        onChange={this.onChangeteleNo}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Cell No: </label>
                     <input type="text" 
@@ -224,6 +241,8 @@ export default class Create extends Component {
                        onChange={this.onChangecellNo}
                       /> 
                 </div>
+                </div>
+                <div class="col-sm-6">
                 <div className="form-group">
                     <label>Cammission (%):: </label>
                     <input type="text" 
@@ -233,11 +252,13 @@ export default class Create extends Component {
                        onChange={this.onChangecammission}
                       /> 
                 </div>
+                </div>
+                </div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>
                 </div>
             </form>
-         `   <h3 align="center">Location List</h3>
+         `   <h3 align="center">Broker List</h3>
           <table className="table table-striped" style={{ marginTop: 20 }}>
             <thead>
               <tr>

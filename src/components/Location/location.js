@@ -38,7 +38,7 @@ export default class Create extends Component {
         .then(res => console.log(res.data));
     
     this.setState({
-      location_Id: '',
+      location_Id: '', 
       location_Name: ''
     })
   }
@@ -64,10 +64,11 @@ export default class Create extends Component {
   render() {
     //componentDidMount()
     return (
-        <div style={{ marginTop: 10 }}>
-          <div className="main">
+        <div style={{ marginTop: 10,marginLeft:10 }}>
+          <div className="content-wrapper">
             <form>
-              
+            <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Location Id:  </label>
                     <input 
@@ -78,6 +79,9 @@ export default class Create extends Component {
                       onChange={this.onChangelocationId}
                       /> 
                 </div>
+                </div>
+                
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Location Name: </label>
                     <input type="text" 
@@ -86,6 +90,8 @@ export default class Create extends Component {
                       value={this.state.location_Name}
                        onChange={this.onChangelocationName}
                       />
+                </div>
+                </div>
                 </div>
                 <div className="form-group">
                     <input type="submit" value=" Save" className="btn btn-primary" onClick={this.onSubmit}/>

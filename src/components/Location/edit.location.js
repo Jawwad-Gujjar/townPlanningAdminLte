@@ -55,10 +55,12 @@ export default class Edit extends Component {
  
   render() {
     return (
-        <div style={{ marginTop: 10 }}>
+        <div style={{ marginTop: 10,marginLeft:10 }}>
             <h3 align="center">Update Location</h3>
-            <div className="main">
+            <div className="content-wrapper">
             <form onSubmit={this.onSubmit}>
+            <div className="row">
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Location Id:  </label>
                     <input 
@@ -69,6 +71,9 @@ export default class Edit extends Component {
                       onChange={this.onChangelocationId}
                       />
                 </div>
+                </div>
+                
+              <div class="col-sm-6">
                 <div className="form-group">
                     <label>Location Name: </label>
                     <input type="text" 
@@ -77,6 +82,8 @@ export default class Edit extends Component {
                       value={this.state.location_Name}
                       onChange={this.onChangelocationName}
                       />
+                </div>
+                </div>
                 </div>
                 <div className="form-group">
                     <input type="submit" 
